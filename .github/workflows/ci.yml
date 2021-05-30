@@ -10,6 +10,6 @@ jobs:
     steps:
       - uses: YosysHQ/setup-oss-cad-suite@v1
       - run: |
-        iverilog --version
-        verilator --version
+          iverilog --version
+          verilator --version
 
