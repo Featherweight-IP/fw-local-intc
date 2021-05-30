@@ -1,0 +1,15 @@
+
+name: Test
+on:
+  - push
+  - workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: YosysHQ/setup-oss-cad-suite@v1
+      - run: |
+        iverilog --version
+        verilator --version
+
