@@ -15,20 +15,21 @@ module fw_local_intc_wb #(
 		) (
 		input				clock,
 		input				reset,
-		`WB_TARGET_PORT(r_, 2, 32),
+		`WB_TARGET_PORT(r_, 4, 32),
 		input[N_SRCS-1:0]	src,
-		output reg			irq
+		output				irq
 		);
 
 	`RV_ADDR_LINE_EN_WIRES(rv_r_, 2, 32);
 	
+	reg state;
 	assign r_dat_r = rv_r_dat_r;
 	assign rv_r_dat_w = r_dat_w;
 	assign rv_r_we = r_we;
 	assign rv_r_valid = (r_cyc && r_stb);
+	assign rv_r_adr = r_adr[3:2];
 	assign r_ack = (state == 1'b1);
 	
-	reg state;
 	always @(posedge clock or posedge reset) begin
 		if (reset) begin
 			state <= 1'b0;
