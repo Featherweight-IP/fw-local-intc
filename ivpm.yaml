@@ -19,14 +19,14 @@ package:
           type: python
           src: pypi
         - name: pybfms
-          url: ssh://git@github.com/pybfms/pybfms.git
+          url: https://github.com/pybfms/pybfms.git
           type: python
         - name: pybfms-gpio
-          url: ssh://git@github.com/pybfms/pybfms-gpio.git
+          url: https://github.com/pybfms/pybfms-gpio.git
           type: python
         - name: pybfms-wishbone
-          url: ssh://git@github.com/pybfms/pybfms-wishbone.git
+          url: https://github.com/pybfms/pybfms-wishbone.git
           type: python
         - name: mkdv
-          url: ssh://git@github.com/fvutils/mkdv.git
+          url: https://github.com/fvutils/mkdv.git
           type: python
